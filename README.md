@@ -8,6 +8,14 @@ Musterilerin kaydedildigi **CustomerService** seklinde 2 servis iceren bir uygul
 * java11+
 * mongoDB4+ (stok sayilarini siparise gore azaltirken transactionlar kullanildigi replika set ile calistirilmalidir)
 
+## Kullanilan Araclar
+
+* Spring Boot, Spring Web, Spring Security (Kullanici tabanli Basic Auth), Spring Data MongoDB
+* Lombok
+* MapStruct
+* Swagger 2
+
+
 ## Ayagi kaldirma
 `mongod   --replSet rs0` ve ardindan `mongo --eval "rs.initiate()"` ile replika set olusturulur ve mongoDB baslatilir.
 
