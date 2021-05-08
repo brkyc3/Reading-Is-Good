@@ -1,0 +1,117 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ReadingIsGood",
+		"_postman_id": "491e6554-ebf7-a7d9-7f91-a37f17c11438",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getCustomerOrders",
+			"request": {
+				"url": "http://localhost:8080/api/orders/customer/6095bff35b39d06bb7ae7e3a",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YnJreXpjNEBnbWFpbC5jb206MTIzMzIx",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "newOrderRequest",
+			"request": {
+				"url": "http://localhost:8080/api/orders",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YnJreXpjNEBnbWFpbC5jb206MTIzMzIx",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"customerId\":\"6095bff35b39d06bb7ae7e3a\",\n\t\"orderItems\":[{\n\t\t\"bookId\":\"609595cebc6b1607a0ac4185\",\n\t\t\"bookName\":\"Armutlarin sirri\",\n\t\t\"count\":1},\n\t\t{\n\t\t\"bookId\":\"609595b7bc6b1607a0ac4184\",\n\t\t\"bookName\":\"Elmalarin sirri\",\n\t\t\"count\":1}\n\t\t]\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getOrderDetails",
+			"request": {
+				"url": "http://localhost:8080/api/orders/6095c0b51d85260359c7cebf",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YnJreXpjNEBnbWFpbC5jb206MTIzMzIx",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "saveCustomerRequest",
+			"request": {
+				"url": "http://localhost:8081/api/customers",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic cm9vdDpyb290",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"x\",\n\t\"surname\":\"z\",\n\t\"email\":\"brkyzc111@gmail.com\",\n\t\"password\":\"123321\",\n\t\"birthDate\":\"05-05-1995\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "saveStock",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "retrieveAllBooks",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
