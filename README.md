@@ -49,6 +49,6 @@ Kaydedilen siparis idsi ile detaylari `http://localhost:8080/api/orders/xxxxxxxx
 
 Musteriye ait tum siparisler ozet olarak `http://localhost:8080/api/orders/customer/xxxxxxxxxxxxxx` seklinde musterinin idsi ile sorgulanabilir.
 
-MongoDB'den kaydedilen datalar **readingisgood** DB altinda **books** **orders** **customers** collection'larindan ayrica incelenebilir. 
+MongoDB'den kaydedilen datalar **readingisgood** DB altinda **books**,**orders** ve **customers** collection'larindan ayrica incelenebilir. 
 
 Uygulamalarin bastigi loglar, uygulama path'i altindaki app.log dosyalarindan takip edilebilir.
