@@ -103,7 +103,6 @@ public class OrderService {
         if(orderDocument.isEmpty())
             throw new NotFoundException(ErrorCode.RISGOOD_ORDER_NOT_FOUND,String.format("Cannot be found any order with orderId '%s'",orderId));
         logger.info("orders details retrieved for orderId {}",orderId);
-        System.out.println(orderDocument.get());
         return mapper.mapToOrder(orderDocument.get());
     }
 
