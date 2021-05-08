@@ -25,7 +25,7 @@ Baglanti bilgisi gerekirse **application.properties** altindan alttaki property 
 
 Servisler maven olarak herhangi bir ideye cekilebilir, ya da
 
-`mvn clean install` calistirilarak target altinda olusan jarlar `java -jar ...` seklinde ayagi kaldirilabilir.
+`mvn clean install` calistirilarak target altinda olusan jarlar `java -jar ...` seklinde ayaga kaldirilabilir.
 
 `http://localhost:8080/api/orders` order service
 
