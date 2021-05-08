@@ -16,7 +16,7 @@ Musterilerin kaydedildigi **CustomerService** seklinde 2 servis iceren bir uygul
 * Swagger 2
 
 
-## Ayagi kaldirma
+## Ayaga kaldirma
 `mongod   --replSet rs0` ve ardindan `mongo --eval "rs.initiate()"` ile replika set olusturulur ve mongoDB baslatilir.
 
 Baglanti bilgisi gerekirse **application.properties** altindan alttaki property ile degistirilebilir.
