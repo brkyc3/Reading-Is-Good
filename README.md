@@ -45,7 +45,7 @@ Postman collectioni import edilerek oncelikle ornek musteri kaydetme islemi yapi
 
 Musteri kaydetme islemi `http://localhost:8081/api/customers` **saveCustomerRequest** ile yapilir.
 
-Sonrasinda `http://localhost:8080/api/orders/stock` **saveStock** ile kitap stoklari kaydedilmelidir. 
+Sonrasinda `http://localhost:8080/api/orders/stock` **saveStock** ile kitap stoklari kaydedilmelidir. Id alani yeni kayitlarda bos, guncellemelerde dolu gonderilir. 
 
 Kaydedilen tum kitaplar `http://localhost:8080/api/orders/stock` **retrieveAllBooks** **GET** istegi ile listenebilir.
 

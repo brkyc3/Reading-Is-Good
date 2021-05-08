@@ -122,7 +122,7 @@ public class OrderService {
         query.addCriteria(Criteria.where("currentCount").gte(item.getCount()));
         Update update = new Update();
         update.inc("currentCount", -item.getCount());
-        UpdateResult result = mongoTemplate.updateMulti(query, update, StockDocument.class);
+        UpdateResult result = mongoTemplate.updateFirst(query, update, StockDocument.class);
         if(result.getMatchedCount()==0)
             throw new NotFoundException(ErrorCode.RISGOOD_STOCK_NOT_ENOUGH,String.format("Not enough stock for bookId %s",item.getBookId()));
     }
