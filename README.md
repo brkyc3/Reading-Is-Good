@@ -60,3 +60,24 @@ Musteriye ait tum siparisler ozet olarak `http://localhost:8080/api/orders/custo
 MongoDB'den kaydedilen datalar **readingisgood** DB altinda **books**,**orders** ve **customers** collection'larindan ayrica incelenebilir. 
 
 Uygulamalarin bastigi loglar, uygulama path'i altindaki app.log dosyalarindan takip edilebilir.
+
+## Responselar
+Basarili ekleme islemleri eklenen kaydin idsini donuyor, sistemsel hatalar **RISGOOD_SYSTEM** , business hatalar ise alttaki kodlardan biriyle atiliyor.Yeni bir hata icin hangi http status ile donulmesi isteniyorsa ErrorCode enuma tanimlanarak kullanilabilir.
+```java
+   
+        RISGOOD_STOCK_NOT_ENOUGH(HttpStatus.NOT_FOUND),
+        RISGOOD_CUSTOMER_NOT_FOUND(HttpStatus.NOT_FOUND),
+        RISGOOD_BOOK_NOT_FOUND(HttpStatus.NOT_FOUND),
+        RISGOOD_ORDER_NOT_FOUND(HttpStatus.NOT_FOUND),
+        RISGOOD_SYSTEM(HttpStatus.INTERNAL_SERVER_ERROR),
+        RISGOOD_VALIDATION(HttpStatus.BAD_REQUEST);
+  ```
+  Ornek hata
+  ```
+  {
+    "code": "RISGOOD_STOCK_NOT_ENOUGH",
+    "name": "NotFoundResponse",
+    "errorMessage": "Not enough stock for bookId 609673f3e6cec26ee1910660",
+    "time": "2021-05-09T08:59:47.0899165"
+}
+  ```
