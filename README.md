@@ -1,4 +1,4 @@
-# RIGOOD
+# RISGOOD
 
 Kitap icin siparis girilen, siparislerin listelenebildigi bu islemlere paralel kitap stoklarinin guncellendigi **OrderService** ,
 
