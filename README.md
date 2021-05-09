@@ -51,7 +51,7 @@ Kaydedilen tum kitaplar `http://localhost:8080/api/orders/stock` **retrieveAllBo
 
 Buradaki id ve kaydedilen musteriden alinan idler ile `http://localhost:8080/api/orders` **newOrderRequest** siparis giris islemi yapilabilir.
 
-*(Siparis girisinde stoktaki kitaplari duserken tutarsizlik olusmamasi icin bu islem transaction icersinde gerceklestirildi.)*
+**_(Siparis girisinde stoktaki kitaplari duserken tutarsizlik olusmamasi icin bu islem transaction icersinde gerceklestirildi.)_**
 
 Kaydedilen siparis idsi ile detaylari `http://localhost:8080/api/orders/xxxxxxxxx` seklinde **getOrderDetails** ile sorgulanabilir.Burada siparis statusu stok yeterli ise **STOCK_OK** yetersiz ise **STOCK_CONTROL** olarak kaydedilir.
 
@@ -62,7 +62,8 @@ MongoDB'den kaydedilen datalar **readingisgood** DB altinda **books**,**orders**
 Uygulamalarin bastigi loglar, uygulama path'i altindaki app.log dosyalarindan takip edilebilir.
 
 ## Responselar
-Basarili ekleme islemleri eklenen kaydin idsini donuyor, sistemsel hatalar **RISGOOD_SYSTEM** , business hatalar ise alttaki kodlardan biriyle atiliyor.Yeni bir hata icin hangi http status ile donulmesi isteniyorsa ErrorCode enuma tanimlanarak kullanilabilir.
+Basarili ekleme islemleri eklenen kaydin idsini donuyor, sistemsel hatalar **RISGOOD_SYSTEM** , business hatalar ise alttaki kodlardan biriyle atiliyor.Yeni bir hata icin hangi http status ile donulmesi isteniyorsa **ErrorCode** enuma tanimlanarak kullanilabilir.Ek detay gereken hatalar icin **ErrorResponse** ve **BusinessException** classlari extend edilebilir.
+
 ```java
    
         RISGOOD_STOCK_NOT_ENOUGH(HttpStatus.NOT_FOUND),
