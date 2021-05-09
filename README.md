@@ -72,12 +72,26 @@ Basarili ekleme islemleri eklenen kaydin idsini donuyor, sistemsel hatalar **RIS
         RISGOOD_SYSTEM(HttpStatus.INTERNAL_SERVER_ERROR),
         RISGOOD_VALIDATION(HttpStatus.BAD_REQUEST);
   ```
-  Ornek hata
+  Ornek hatalar
+  
+  (404)
+   
   ```
   {
     "code": "RISGOOD_STOCK_NOT_ENOUGH",
     "name": "NotFoundResponse",
     "errorMessage": "Not enough stock for bookId 609673f3e6cec26ee1910660",
     "time": "2021-05-09T08:59:47.0899165"
+}
+```
+
+(400)
+
+```
+{
+    "code": "RISGOOD_VALIDATION",
+    "name": "InputNotValidResponse",
+    "errorMessage": "[Field error in object 'orderRequest' on field 'orderItems[0].bookId': rejected value [null]]",
+    "time": "2021-05-09T09:06:42.378364"
 }
   ```
