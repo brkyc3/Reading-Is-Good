@@ -1,5 +1,7 @@
 package com.readingisgood.customerservice.controller;
 
+import com.readingisgood.customerservice.controller.model.LoginRequest;
+import com.readingisgood.customerservice.controller.model.LoginResponse;
 import com.readingisgood.customerservice.service.model.Customer;
 import com.readingisgood.customerservice.controller.model.SaveCustomerRequest;
 import com.readingisgood.customerservice.controller.model.SaveCustomerResponse;
@@ -21,14 +23,12 @@ public class CustomerController {
     private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
     private final CustomerService service;
     private final CustomerMapper mapper;
-    private final PasswordEncoder encoder;
 
 
-    @PostMapping
+    @PostMapping("/signup")
     public SaveCustomerResponse saveCustomer(@RequestBody @Validated SaveCustomerRequest customer){
         logger.info("saveCustomerRequest : {} ", customer);
         try {
-            customer.setPassword(encoder.encode(customer.getPassword()));
             logger.info("saveCustomerRequest  password encoded {}",customer.getEmail());
             Customer savedCustomer = service.saveCustomer(mapper.mapToCustomer(customer));
             return mapper.mapToSaveCustomerResponse(savedCustomer);
@@ -37,4 +37,17 @@ public class CustomerController {
             throw e;
         }
     }
+
+    @PostMapping("/login")
+    public LoginResponse login(@RequestBody @Validated LoginRequest loginRequest){
+        logger.info("loginRequest : {} ", loginRequest);
+        try {
+            String token = service.login(mapper.mapToLogin(loginRequest));
+            return new LoginResponse(token);
+        }catch (Exception e){
+            logger.error("Exception occurred while login ",e);
+            throw e;
+        }
+    }
+
 }
